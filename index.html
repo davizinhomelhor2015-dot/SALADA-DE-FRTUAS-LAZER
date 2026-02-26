@@ -72,7 +72,7 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .hud{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
 .hud-round{font-family:'Orbitron',monospace;font-size:.65rem;font-weight:700;letter-spacing:.18em;color:var(--dim);text-transform:uppercase}
 .hud-round span{color:var(--cyan)}
-.hud-timer{font-family:'Orbitron',monospace;font-size:3rem;font-weight:900;line-height:1;color:var(--green);text-shadow:0 0 12px var(--green);transition:color .3s;min-width:3rem;text-align:right}
+.hud-timer{font-family:'Orbitron',monospace;font-size:3rem;font-weight:900;line-height:1;color:var(--green);text-shadow:0 0 12px var(--green);transition:color .3s;min-width:6rem;text-align:right}
 .hud-timer.warn{color:var(--yellow);text-shadow:0 0 12px var(--yellow)}
 .hud-timer.danger{color:var(--pink);text-shadow:0 0 12px var(--pink);animation:tPanic .6s steps(1) infinite}
 @keyframes tPanic{0%{opacity:1}50%{opacity:.5}}
@@ -236,7 +236,7 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 <div id="screen-game" class="screen">
   <div class="hud">
     <div class="hud-round">Rodada <span id="g-round">1</span>/5</div>
-    <div class="hud-timer" id="g-timer">60</div>
+    <div class="hud-timer" id="g-timer">05:00</div>
   </div>
   <div class="letter-stage">
     <div class="letter-ring"><span class="letter-char" id="g-letter">A</span></div>
@@ -370,7 +370,7 @@ window.createRoom = async () => {
   await set(roomRef,{
     code, createdAt:Date.now(),
     players:{[pid]:{name,score:0,isHost:true,ts:Date.now()}},
-    gameState:{status:'waiting',letter:null,round:0,timer:60,stopped:false,stoppedBy:null},
+    gameState:{status:'waiting',letter:null,round:0,timer:300,stopped:false,stoppedBy:null},
     answers:{_:0}, chat:{_:0},
   });
   toast('// SALA CRIADA: '+code);
@@ -519,15 +519,18 @@ function renderLobby(data){
 }
 
 window.startGame = async ()=>{
-  await update(ref(db,`rooms/${gs.roomId}/gameState`),{status:'playing',letter:rndL(),round:1,timer:60,stopped:false,stoppedBy:null,resultsCalc:false});
+  await update(ref(db,`rooms/${gs.roomId}/gameState`),{status:'playing',letter:rndL(),round:1,timer:300,stopped:false,stoppedBy:null,resultsCalc:false});
   await set(push(ref(db,`rooms/${gs.roomId}/chat`)),{sys:true,text:'// PARTIDA INICIADA! BOA SORTE.',ts:Date.now()});
 };
 
 function renderGame(data){
   const gst=data.gameState;
   $('g-round').textContent=gst.round;
-  const t=$('g-timer'); t.textContent=gst.timer;
-  t.className='hud-timer'+(gst.timer<=10?' danger':gst.timer<=25?' warn':'');
+  const t=$('g-timer');
+  const mm=String(Math.floor(gst.timer/60)).padStart(2,'0');
+  const ss=String(gst.timer%60).padStart(2,'0');
+  t.textContent=mm+':'+ss;
+  t.className='hud-timer'+(gst.timer<=30?' danger':gst.timer<=60?' warn':'');
 
   if (gst.round!==gs.round){
     gs.round=gst.round; gs.answers={}; gs.saved=false;
@@ -664,7 +667,7 @@ window.nextRound = async ()=>{
   } else {
     const letter=rndL();
     await set(push(ref(db,`rooms/${gs.roomId}/chat`)),{sys:true,text:`// RODADA ${g.round+1} — LETRA: ${letter}`,ts:Date.now()});
-    await update(ref(db,`rooms/${gs.roomId}/gameState`),{status:'playing',letter,round:g.round+1,timer:60,stopped:false,stoppedBy:null,resultsCalc:false});
+    await update(ref(db,`rooms/${gs.roomId}/gameState`),{status:'playing',letter,round:g.round+1,timer:300,stopped:false,stoppedBy:null,resultsCalc:false});
   }
 };
 
@@ -698,7 +701,7 @@ window.playAgain = async ()=>{
   const snap=await get(ref(db,`rooms/${gs.roomId}`));
   const data=snap.val(); const upd={};
   Object.keys(data.players||{}).forEach(id=>{upd[`players/${id}/score`]=0;});
-  upd['gameState']={status:'waiting',letter:null,round:0,timer:60,stopped:false,stoppedBy:null};
+  upd['gameState']={status:'waiting',letter:null,round:0,timer:300,stopped:false,stoppedBy:null};
   upd['answers']={_:0}; upd['chat']={_:0};
   await update(ref(db,`rooms/${gs.roomId}`),upd);
   gs.round=-1; showScreen('lobby');
