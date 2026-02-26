@@ -32,13 +32,11 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .panel-yellow{border-color:rgba(255,230,0,.2)}.panel-yellow::before,.panel-yellow::after{border-color:var(--yellow)}
 .ptag{position:absolute;top:-1px;left:16px;background:var(--cyan);color:var(--bg);font-family:'Orbitron',monospace;font-size:.55rem;font-weight:700;letter-spacing:.15em;padding:.12rem .5rem;text-transform:uppercase}
 .ptag.yw{background:var(--yellow)}
-/* inputs — 16px evita zoom iOS */
 .field{margin-bottom:1rem}
 .field label{display:block;font-family:'Orbitron',monospace;font-size:.58rem;font-weight:700;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:.4rem;opacity:.7}
 .field input{width:100%;padding:.8rem .9rem;background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.2);border-radius:2px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:600;outline:none;caret-color:var(--cyan);-webkit-appearance:none;appearance:none}
 .field input:focus{border-color:var(--cyan);background:rgba(0,245,255,.07)}
 .big-code{font-family:'Orbitron',monospace!important;font-size:1.6rem!important;font-weight:900!important;text-align:center!important;letter-spacing:.5rem!important;text-transform:uppercase!important;padding:1rem!important;color:var(--yellow)!important;border-color:rgba(255,230,0,.3)!important;background:rgba(255,230,0,.03)!important;caret-color:var(--yellow)!important}
-/* buttons */
 .btn{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;padding:.85rem 1.2rem;border:none;border-radius:2px;font-family:'Orbitron',monospace;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:opacity .15s,transform .15s;-webkit-appearance:none;appearance:none;touch-action:manipulation}
 .btn:active:not(:disabled){transform:scale(.96);opacity:.8}
 .btn:disabled{opacity:.3;pointer-events:none}
@@ -50,11 +48,9 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .btn-icon{width:2.4rem;height:2.4rem;padding:0;border-radius:50%;font-size:1rem;flex-shrink:0;min-width:2.4rem}
 .divider{display:flex;align-items:center;gap:.75rem;margin:1rem 0;color:var(--dim);font-size:.65rem;font-family:'Orbitron',monospace;letter-spacing:.2em;text-transform:uppercase}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(0,245,255,.2),transparent)}
-/* code box */
 .code-box{text-align:center;padding:1.25rem .75rem .5rem}
 .code-box .cbl{font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-bottom:.5rem}
 .code-box .cbv{font-family:'Orbitron',monospace;font-size:2.6rem;font-weight:900;letter-spacing:.6rem;color:var(--yellow);text-shadow:0 0 10px var(--yellow),0 0 30px var(--yellow);line-height:1}
-/* player list */
 .plist{display:flex;flex-direction:column;gap:.4rem}
 .prow{display:flex;align-items:center;gap:.75rem;padding:.65rem .9rem;background:rgba(0,245,255,.03);border:1px solid rgba(0,245,255,.08);border-left:2px solid rgba(0,245,255,.3);border-radius:2px}
 .prow.me{background:rgba(57,255,20,.04);border-left-color:var(--green)}
@@ -72,9 +68,7 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .rbg{color:var(--green);border:1px solid rgba(57,255,20,.4);background:rgba(57,255,20,.06)}
 .rby{color:var(--yellow);border:1px solid rgba(255,230,0,.4);background:rgba(255,230,0,.06)}
 .rbp{color:var(--pink);border:1px solid rgba(255,45,120,.4);background:rgba(255,45,120,.06)}
-/* lobby grid */
 .lobby-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.25rem}
-/* HUD */
 .hud{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
 .hud-round{font-family:'Orbitron',monospace;font-size:.65rem;font-weight:700;letter-spacing:.18em;color:var(--dim);text-transform:uppercase}
 .hud-round span{color:var(--cyan)}
@@ -82,26 +76,21 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .hud-timer.warn{color:var(--yellow);text-shadow:0 0 12px var(--yellow)}
 .hud-timer.danger{color:var(--pink);text-shadow:0 0 12px var(--pink);animation:tPanic .6s steps(1) infinite}
 @keyframes tPanic{0%{opacity:1}50%{opacity:.5}}
-/* letter ring */
 .letter-stage{display:flex;justify-content:center;margin-bottom:1.25rem}
 .letter-ring{position:relative;width:90px;height:90px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid rgba(255,45,120,.4)}
 .letter-char{font-family:'Orbitron',monospace;font-size:3.8rem;font-weight:900;color:white;text-shadow:0 0 10px var(--pink),0 0 28px var(--pink);animation:lPop .4s ease;display:block;line-height:1}
 @keyframes lPop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-/* stop alert */
 .stop-alert{background:rgba(255,230,0,.05);border:1px solid rgba(255,230,0,.25);border-radius:2px;padding:.55rem 1rem;text-align:center;font-family:'Orbitron',monospace;font-size:.62rem;letter-spacing:.1em;color:var(--yellow);margin-bottom:1rem;text-transform:uppercase}
-/* categories — 2 col */
 .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
 .cat-label{font-family:'Orbitron',monospace;font-size:.52rem;font-weight:700;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase;margin-bottom:.25rem;opacity:.6}
 .cat-input{width:100%;padding:.65rem .75rem;background:rgba(0,0,0,.4);border:1px solid rgba(0,245,255,.15);border-bottom:2px solid rgba(0,245,255,.3);border-radius:2px 2px 0 0;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:600;outline:none;caret-color:var(--cyan);-webkit-appearance:none;appearance:none}
 .cat-input:focus{border-bottom-color:var(--cyan);background:rgba(0,245,255,.04)}
 .cat-input:disabled{opacity:.2;pointer-events:none}
-/* stop button */
 .stop-stage{display:flex;justify-content:center;margin:1.5rem 0 .5rem}
 .stop-btn{width:100px;height:100px;border-radius:50%;border:3px solid var(--pink);background:radial-gradient(circle at 40% 35%,rgba(255,45,120,.15),rgba(255,45,120,.04)70%);color:var(--pink);font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:900;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;line-height:1;box-shadow:0 0 20px rgba(255,45,120,.4);letter-spacing:.08em;text-transform:uppercase;touch-action:manipulation;-webkit-appearance:none;transition:transform .12s,opacity .12s}
 .stop-btn .si{font-size:1.6rem;line-height:1}
 .stop-btn:active:not(:disabled){transform:scale(.9)}
 .stop-btn:disabled{border-color:rgba(224,244,255,.1);color:rgba(224,244,255,.1);box-shadow:none;background:transparent}
-/* CHAT — painel normal que rola com a página */
 .chat-panel{background:var(--glass);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:1rem;backdrop-filter:blur(6px);position:relative}
 .chat-panel::before,.chat-panel::after{content:'';position:absolute;width:12px;height:12px;border-color:var(--cyan);border-style:solid}
 .chat-panel::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
@@ -118,10 +107,8 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .msg-author.me{color:var(--cyan)}.msg-author.them{color:var(--pink)}
 .msg-text{color:var(--text);font-weight:600}
 .chat-inp-row{display:flex;gap:.4rem;padding:.5rem .6rem;border-top:1px solid rgba(0,245,255,.08);align-items:center}
-/* font-size 16px aqui também — evita zoom quando foca no campo de chat */
 .chat-inp-row input{flex:1;padding:.5rem .65rem;background:rgba(0,245,255,.03);border:1px solid rgba(0,245,255,.12);border-radius:2px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:600;outline:none;-webkit-appearance:none;appearance:none;caret-color:var(--cyan)}
 .chat-inp-row input:focus{border-color:rgba(0,245,255,.3);background:rgba(0,245,255,.05)}
-/* results */
 .r-header{text-align:center;margin-bottom:1.5rem}
 .r-letter-ring{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;border:2px solid var(--pink);font-family:'Orbitron',monospace;font-size:2.4rem;font-weight:900;color:white;text-shadow:0 0 10px var(--pink),0 0 28px var(--pink);margin-bottom:.75rem}
 .scoreboard{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.25rem}
@@ -141,7 +128,6 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .an-word.empty{color:rgba(224,244,255,.15);font-style:italic;font-size:.78rem;font-weight:400}
 .an-pts{font-family:'Orbitron',monospace;font-size:.72rem;font-weight:700;flex-shrink:0}
 .an-pts.g{color:var(--green)}.an-pts.y{color:var(--yellow)}.an-pts.r{color:rgba(255,45,120,.4)}
-/* final */
 .trophy-wrap{text-align:center;font-size:4rem;line-height:1;margin-bottom:.6rem}
 .winner-line{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;text-align:center;letter-spacing:.08em;color:var(--yellow);text-shadow:0 0 12px var(--yellow);margin-bottom:1.75rem;text-transform:uppercase}
 .rank-row{display:flex;align-items:center;gap:.85rem;padding:.9rem 1rem;border-radius:2px;margin-bottom:.5rem}
@@ -153,16 +139,13 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
 .rank-name{flex:1;font-weight:700;font-size:.95rem}
 .rank-you{font-family:'Orbitron',monospace;font-size:.5rem;color:var(--green);letter-spacing:.08em;margin-left:.35rem}
 .rank-pts{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--yellow)}
-/* overlay reconectando */
 .rc-overlay{position:fixed;inset:0;background:rgba(4,8,16,.96);backdrop-filter:blur(10px);z-index:9990;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem}
 .rc-spinner{width:48px;height:48px;border:3px solid rgba(0,245,255,.15);border-top-color:var(--cyan);border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .rc-title{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;letter-spacing:.15em;color:var(--cyan);text-transform:uppercase}
 .rc-sub{font-family:'Orbitron',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--dim);text-transform:uppercase}
-/* toast */
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%)translateY(80px);background:rgba(7,17,31,.97);backdrop-filter:blur(16px);color:var(--cyan);padding:.65rem 1.4rem;border:1px solid rgba(0,245,255,.25);border-radius:2px;font-family:'Orbitron',monospace;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 8px 28px rgba(0,0,0,.5);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;max-width:90vw;text-align:center}
 .toast.show{transform:translateX(-50%)translateY(0)}
-/* utils */
 .gap-v{display:flex;flex-direction:column;gap:.65rem}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
 .mt{margin-top:.65rem}.mt2{margin-top:1rem}.center{text-align:center}
@@ -267,7 +250,6 @@ body::after{content:'';position:fixed;inset:0;z-index:1;background:repeating-lin
       <span class="si">✋</span><span>STOP</span>
     </button>
   </div>
-  <!-- CHAT: painel simples, rola com a página — sem drawer, sem FAB, sem bug -->
   <div class="chat-panel">
     <div class="chat-head">💬 Chat</div>
     <div class="chat-msgs" id="chat-msgs"></div>
@@ -328,7 +310,6 @@ const fbApp = initializeApp({
 getAnalytics(fbApp);
 const db = getDatabase(fbApp);
 
-// PID persistente
 const pid = (() => {
   let id = localStorage.getItem('sf_pid');
   if (!id) { id = 'p_'+Date.now()+'_'+Math.random().toString(36).substr(2,8); localStorage.setItem('sf_pid',id); }
@@ -341,6 +322,7 @@ const gs = {
   answers:{}, timerInterval:null,
   unsub:null, chatUnsub:null,
   round:-1, saved:false,
+  currentScreen: 'home',  // ← NOVO: rastreia tela atual
 };
 
 const CATS = [
@@ -361,20 +343,24 @@ const toast = msg => {
   clearTimeout(toastTm); toastTm=setTimeout(()=>el.classList.remove('show'),3000);
 };
 
+// ── showScreen corrigida ─────────────────────────────────────────────────────
+// Só rola para o topo quando a tela MUDA de verdade.
+// Atualizações de Firebase na mesma tela (timer, chat, etc.) não rolam a página.
 const showScreen = id => {
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  $('screen-'+id).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  const changed = gs.currentScreen !== id;
+  gs.currentScreen = id;
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  $('screen-' + id).classList.add('active');
+  if (changed) window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+// ────────────────────────────────────────────────────────────────────────────
 
-// sessão
 const saveSession = () => {
   if (!gs.roomId) return;
   localStorage.setItem('sf_session', JSON.stringify({roomId:gs.roomId,roomCode:gs.roomCode,name:gs.name,isHost:gs.isHost,ts:Date.now()}));
 };
 const clearSession = () => localStorage.removeItem('sf_session');
 
-// criar sala
 window.createRoom = async () => {
   const name=$('inp-name').value.trim();
   if (!name){toast('// INSIRA SEU APELIDO');return;}
@@ -391,7 +377,6 @@ window.createRoom = async () => {
   showScreen('lobby'); listenRoom(roomId);
 };
 
-// entrar
 window.joinRoom = async () => {
   const name=$('inp-name').value.trim();
   const code=$('inp-code').value.trim().toUpperCase();
@@ -412,7 +397,6 @@ window.joinRoom = async () => {
   toast('// CONECTADO'); showScreen('lobby'); listenRoom(foundId);
 };
 
-// reconexão
 async function tryReconnect(silent=false) {
   const raw=localStorage.getItem('sf_session');
   if (!raw) return false;
@@ -443,7 +427,6 @@ async function tryReconnect(silent=false) {
   } catch(e){overlay?.remove();return false;}
 }
 
-// visibilitychange — volta do WhatsApp
 let wasHidden=false;
 document.addEventListener('visibilitychange', async ()=>{
   if (document.hidden){wasHidden=true;}
@@ -459,7 +442,6 @@ document.addEventListener('visibilitychange', async ()=>{
   }
 });
 
-// listener da sala
 function listenRoom(roomId){
   gs.unsub?.(); gs.unsub=null; gs.chatUnsub?.(); gs.chatUnsub=null;
   gs.unsub=onValue(ref(db,`rooms/${roomId}`),snap=>{
@@ -476,7 +458,6 @@ function listenRoom(roomId){
   });
 }
 
-// chat
 window.sendChat = async ()=>{
   const inp=$('chat-inp');
   const txt=inp.value.trim();
@@ -501,10 +482,8 @@ function renderChatMsgs(data){
   if (atBottom) container.scrollTop=container.scrollHeight;
 }
 
-// voice chat
 let voiceActive=false, localStream=null;
 const peerConns={}, iceQueue={};
-const RTC_CFG={iceServers:[{urls:'stun:stun.l.google.com:19302'}]};
 async function leaveVoice(){
   voiceActive=false;
   localStream?.getTracks().forEach(t=>t.stop()); localStream=null;
@@ -515,7 +494,6 @@ async function leaveVoice(){
   }
 }
 
-// lobby
 function renderLobby(data){
   $('lob-code').textContent=data.code||'------';
   const players=data.players||{}, count=Object.keys(players).length;
@@ -545,7 +523,6 @@ window.startGame = async ()=>{
   await set(push(ref(db,`rooms/${gs.roomId}/chat`)),{sys:true,text:'// PARTIDA INICIADA! BOA SORTE.',ts:Date.now()});
 };
 
-// jogo
 function renderGame(data){
   const gst=data.gameState;
   $('g-round').textContent=gst.round;
@@ -637,7 +614,6 @@ async function calcResults(round){
   await update(ref(db,`rooms/${gs.roomId}`),upd);
 }
 
-// resultados
 function renderResults(data){
   const gst=data.gameState, players=data.players||{}, answers=data.answers||{};
   const letter=gst.letter, round=gst.round;
@@ -692,7 +668,6 @@ window.nextRound = async ()=>{
   }
 };
 
-// final
 function renderFinal(data){
   const players=data.players||{};
   const sorted=Object.entries(players).map(([id,p])=>({id,...p})).sort((a,b)=>(b.score||0)-(a.score||0));
@@ -707,7 +682,6 @@ function renderFinal(data){
   });
 }
 
-// misc
 window.copyCode = ()=>{navigator.clipboard?.writeText(gs.roomCode||'').catch(()=>{});toast('// CÓDIGO COPIADO: '+gs.roomCode);};
 
 window.leaveRoom = async ()=>{
@@ -716,6 +690,7 @@ window.leaveRoom = async ()=>{
   await leaveVoice().catch(()=>{});
   if (gs.roomId) await remove(ref(db,`rooms/${gs.roomId}/players/${pid}`)).catch(()=>{});
   gs.roomId=null; gs.roomCode=null; clearSession(); gs.round=-1;
+  gs.currentScreen = null; // força scroll no próximo showScreen
   showScreen('home');
 };
 
@@ -731,7 +706,6 @@ window.playAgain = async ()=>{
 
 window.goHome = ()=>leaveRoom();
 
-// init
 if (gs.name) $('inp-name').value=gs.name;
 tryReconnect(false).then(ok=>{if(!ok)showScreen('home');});
 </script>
